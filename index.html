@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Mortgage Calculator</title>
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <main class="wrap">
+    <div class="header">
+      <div class="logo-badge">
+  <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+       xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+    <rect x="4" y="2" width="16" height="20" rx="2" stroke="white" stroke-width="2"/>
+    <rect x="8" y="6" width="8" height="2" fill="white"/>
+    <rect x="8" y="10" width="2" height="2" fill="white"/>
+    <rect x="12" y="10" width="2" height="2" fill="white"/>
+    <rect x="16" y="10" width="2" height="2" fill="white"/>
+    <rect x="8" y="14" width="2" height="2" fill="white"/>
+    <rect x="12" y="14" width="2" height="2" fill="white"/>
+    <rect x="16" y="14" width="2" height="2" fill="white"/>
+  </svg>
+</div>
+
+      <h1>Mortgage Calculator</h1>
+      <p>Calculate your monthly payment in seconds</p>
+    </div>
+
+    <section class="card">
+      <div class="field">
+        <label for="loanAmount">Loan Amount</label>
+        <div class="input">
+          <span class="prefix">$</span>
+          <input id="loanAmount" type="number" min="0" placeholder="300000" />
+        </div>
+      </div>
+
+      <div class="grid2">
+        <div class="field">
+          <label for="interestRate">Interest Rate</label>
+          <div class="input">
+            <span class="prefix">%</span>
+            <input id="interestRate" type="number" min="0" step="0.01" placeholder="6.5" />
+          </div>
+        </div>
+
+        <div class="field">
+          <label for="loanYears">Loan Term</label>
+          <div class="input">
+            <span class="prefix">📅</span>
+            <input id="loanYears" type="number" min="1" placeholder="30" />
+            <span class="suffix">years</span>
+          </div>
+        </div>
+      </div>
+
+      <div class="field">
+        <label for="downPayment">Down Payment <span class="muted">(optional)</span></label>
+        <div class="input">
+          <span class="prefix">$</span>
+          <input id="downPayment" type="number" min="0" placeholder="1000" />
+        </div>
+      </div>
+
+      <button class="btn" id="calculateBtn" type="button">
+        <span aria-hidden="true">🧾</span> Calculate Payment
+      </button>
+    </section>
+
+    <section class="result-card" id="resultSection" hidden>
+      <div class="result-top">
+        <div class="result-label">YOUR MONTHLY PAYMENT</div>
+        <div class="result-amount" id="monthlyPayment">$0.00</div>
+        <div class="result-sub">/month</div>
+      </div>
+
+   <div class="stats">
+  <div class="stat">
+    <div class="stat-icon stat-icon--blue" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M12 2v20M16 7.5c0-1.9-1.8-3.5-4-3.5s-4 1.6-4 3.5 1.8 3.5 4 3.5 4 1.6 4 3.5-1.8 3.5-4 3.5-4-1.6-4-3.5" />
+      </svg>
+    </div>
+    <div class="stat-label">Loan Principal</div>
+    <div class="stat-value" id="principal">$0.00</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-icon stat-icon--yellow" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M4 16l6-6 4 4 6-6" />
+        <path d="M14 8h6v6" />
+      </svg>
+    </div>
+    <div class="stat-label">Total Interest</div>
+    <div class="stat-value" id="totalInterest">$0.00</div>
+  </div>
+
+  <div class="stat">
+    <div class="stat-icon stat-icon--green" aria-hidden="true">
+      <svg viewBox="0 0 24 24">
+        <path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
+        <path d="M8 6h8" />
+        <path d="M8 11h2M12 11h2M16 11h0" />
+        <path d="M8 15h2M12 15h2M16 15h0" />
+      </svg>
+    </div>
+    <div class="stat-label">Total Payment</div>
+    <div class="stat-value" id="totalPayment">$0.00</div>
+  </div>
+</div>
+
+
+
+      <div class="note">
+        This calculator provides estimates only. Contact a lender for exact figures.
+      </div>
+    </section>
+  </main>
+<!-- error  -->
+<div class="modal" id="errorModal" aria-hidden="true">
+  <div class="modal-backdrop" data-close></div>
+
+  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+    <div class="modal-header">
+      <div class="modal-icon" aria-hidden="true">!</div>
+      <div>
+        <div class="modal-title" id="modalTitle">Fix these fields</div>
+        <div class="modal-subtitle" id="modalSubtitle">Please enter valid values to calculate.</div>
+      </div>
+    </div>
+
+    <ul class="modal-list" id="modalList"></ul>
+
+    <div class="modal-actions">
+      <button class="modal-btn" id="modalOkBtn" type="button">OK</button>
+    </div>
+  </div>
+</div>
+
+  <script src="script.js"></script>
+</body>
+<footer class="footer">
+  <a href="about.html">About</a> |
+  <a href="contact.html">Contact</a> |
+  <a href="privacy.html">Privacy Policy</a> |
+  <a href="disclaimer.html">Disclaimer</a>
+</footer>
+
+
+</html>
