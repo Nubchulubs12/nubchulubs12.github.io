@@ -8,22 +8,23 @@
   <title>Mortgage Calculator</title>
   <link rel="stylesheet" href="style.css" />
 </head>
+
 <body>
   <main class="wrap">
     <div class="header">
       <div class="logo-badge">
-  <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
-       xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-    <rect x="4" y="2" width="16" height="20" rx="2" stroke="white" stroke-width="2"/>
-    <rect x="8" y="6" width="8" height="2" fill="white"/>
-    <rect x="8" y="10" width="2" height="2" fill="white"/>
-    <rect x="12" y="10" width="2" height="2" fill="white"/>
-    <rect x="16" y="10" width="2" height="2" fill="white"/>
-    <rect x="8" y="14" width="2" height="2" fill="white"/>
-    <rect x="12" y="14" width="2" height="2" fill="white"/>
-    <rect x="16" y="14" width="2" height="2" fill="white"/>
-  </svg>
-</div>
+        <svg width="28" height="28" viewBox="0 0 24 24" fill="none"
+             xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+          <rect x="4" y="2" width="16" height="20" rx="2" stroke="white" stroke-width="2"/>
+          <rect x="8" y="6" width="8" height="2" fill="white"/>
+          <rect x="8" y="10" width="2" height="2" fill="white"/>
+          <rect x="12" y="10" width="2" height="2" fill="white"/>
+          <rect x="16" y="10" width="2" height="2" fill="white"/>
+          <rect x="8" y="14" width="2" height="2" fill="white"/>
+          <rect x="12" y="14" width="2" height="2" fill="white"/>
+          <rect x="16" y="14" width="2" height="2" fill="white"/>
+        </svg>
+      </div>
 
       <h1>Mortgage Calculator</h1>
       <p>Calculate your monthly payment in seconds</p>
@@ -77,78 +78,142 @@
         <div class="result-sub">/month</div>
       </div>
 
-   <div class="stats">
-  <div class="stat">
-    <div class="stat-icon stat-icon--blue" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M12 2v20M16 7.5c0-1.9-1.8-3.5-4-3.5s-4 1.6-4 3.5 1.8 3.5 4 3.5 4 1.6 4 3.5-1.8 3.5-4 3.5-4-1.6-4-3.5" />
-      </svg>
-    </div>
-    <div class="stat-label">Loan Principal</div>
-    <div class="stat-value" id="principal">$0.00</div>
-  </div>
+      <div class="stats">
+        <div class="stat">
+          <div class="stat-icon stat-icon--blue" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M12 2v20M16 7.5c0-1.9-1.8-3.5-4-3.5s-4 1.6-4 3.5 1.8 3.5 4 3.5 4 1.6 4 3.5-1.8 3.5-4 3.5-4-1.6-4-3.5" />
+            </svg>
+          </div>
+          <div class="stat-label">Loan Principal</div>
+          <div class="stat-value" id="principal">$0.00</div>
+        </div>
 
-  <div class="stat">
-    <div class="stat-icon stat-icon--yellow" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M4 16l6-6 4 4 6-6" />
-        <path d="M14 8h6v6" />
-      </svg>
-    </div>
-    <div class="stat-label">Total Interest</div>
-    <div class="stat-value" id="totalInterest">$0.00</div>
-  </div>
+        <div class="stat">
+          <div class="stat-icon stat-icon--yellow" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M4 16l6-6 4 4 6-6" />
+              <path d="M14 8h6v6" />
+            </svg>
+          </div>
+          <div class="stat-label">Total Interest</div>
+          <div class="stat-value" id="totalInterest">$0.00</div>
+        </div>
 
-  <div class="stat">
-    <div class="stat-icon stat-icon--green" aria-hidden="true">
-      <svg viewBox="0 0 24 24">
-        <path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
-        <path d="M8 6h8" />
-        <path d="M8 11h2M12 11h2M16 11h0" />
-        <path d="M8 15h2M12 15h2M16 15h0" />
-      </svg>
-    </div>
-    <div class="stat-label">Total Payment</div>
-    <div class="stat-value" id="totalPayment">$0.00</div>
-  </div>
-</div>
-
-
+        <div class="stat">
+          <div class="stat-icon stat-icon--green" aria-hidden="true">
+            <svg viewBox="0 0 24 24">
+              <path d="M7 2h10a2 2 0 0 1 2 2v16a2 2 0 0 1-2 2H7a2 2 0 0 1-2-2V4a2 2 0 0 1 2-2z" />
+              <path d="M8 6h8" />
+              <path d="M8 11h2M12 11h2M16 11h0" />
+              <path d="M8 15h2M12 15h2M16 15h0" />
+            </svg>
+          </div>
+          <div class="stat-label">Total Payment</div>
+          <div class="stat-value" id="totalPayment">$0.00</div>
+        </div>
+      </div>
 
       <div class="note">
         This calculator provides estimates only. Contact a lender for exact figures.
       </div>
     </section>
-  </main>
-<!-- error  -->
-<div class="modal" id="errorModal" aria-hidden="true">
-  <div class="modal-backdrop" data-close></div>
 
-  <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
-    <div class="modal-header">
-      <div class="modal-icon" aria-hidden="true">!</div>
-      <div>
-        <div class="modal-title" id="modalTitle">Fix these fields</div>
-        <div class="modal-subtitle" id="modalSubtitle">Please enter valid values to calculate.</div>
+    <!-- ✅ Added educational content for AdSense approval -->
+    <section class="card" style="margin-top:32px">
+      <h2>How this mortgage calculator works</h2>
+      <p>
+        This mortgage calculator estimates your monthly payment based on the loan amount,
+        interest rate (APR), loan term, and optional down payment. It uses a standard loan
+        amortization formula commonly used by mortgage lenders to estimate a fixed monthly payment.
+      </p>
+      <p>
+        Enter your numbers above and click <strong>Calculate Payment</strong> to see your estimated
+        monthly payment, total interest paid over the loan term, and the total amount paid.
+      </p>
+    </section>
+
+    <section class="card" style="margin-top:24px">
+      <h2>Understanding your results</h2>
+      <ul>
+        <li><strong>Loan Principal:</strong> The amount you borrow after subtracting your down payment from the loan amount.</li>
+        <li><strong>Total Interest:</strong> The total interest paid over the full loan term (principal excluded).</li>
+        <li><strong>Total Payment:</strong> The total amount paid over the loan term (principal + interest).</li>
+      </ul>
+    </section>
+
+    <section class="card" style="margin-top:24px">
+      <h2>What this calculator does not include</h2>
+      <p>
+        This tool estimates principal and interest only. It does not include property taxes,
+        homeowner’s insurance, PMI, HOA fees, lender origination fees, discount points, or other
+        closing costs. Those costs vary by lender and location, so your real monthly payment may be higher.
+      </p>
+    </section>
+
+    <section class="card" style="margin-top:24px">
+      <h2>Mortgage calculator FAQ</h2>
+
+      <p><strong>Is this calculator accurate?</strong><br>
+        This calculator provides estimates. Your lender’s exact payment can differ based on fees,
+        escrow, taxes, insurance, and your final interest rate.
+      </p>
+
+      <p><strong>Does this include taxes and insurance?</strong><br>
+        No. Taxes and insurance vary widely. Many lenders include these in your monthly payment through escrow.
+      </p>
+
+      <p><strong>Can I use this for refinancing?</strong><br>
+        Yes. Enter your remaining balance as the loan amount, your new rate, and the new term to estimate a refinance payment.
+      </p>
+
+      <p><strong>Why does interest cost so much over time?</strong><br>
+        Interest adds up over long loan terms, especially at higher rates. Shorter terms usually cost less in total interest,
+        but have higher monthly payments.
+      </p>
+    </section>
+<section class="card" style="margin-top:24px">
+  <h2>How mortgage payments are calculated</h2>
+  <p>
+    Mortgage payments are calculated using an amortization schedule, which spreads
+    loan repayment over a fixed number of monthly payments. Early payments consist
+    mostly of interest, while later payments pay down more principal.
+  </p>
+  <p>
+    Factors that affect your monthly payment include the loan amount, interest rate,
+    loan term length, and whether you make a down payment. Even small changes to the
+    interest rate can significantly impact the total interest paid over time.
+  </p>
+</section>
+    <footer class="footer">
+      <a href="about.html">About</a> |
+      <a href="contact.html">Contact</a> |
+      <a href="privacy.html">Privacy Policy</a> |
+      <a href="disclaimer.html">Disclaimer</a>
+    </footer>
+  </main>
+
+  <!-- error  -->
+  <div class="modal" id="errorModal" aria-hidden="true">
+    <div class="modal-backdrop" data-close></div>
+
+    <div class="modal-card" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <div class="modal-header">
+        <div class="modal-icon" aria-hidden="true">!</div>
+        <div>
+          <div class="modal-title" id="modalTitle">Fix these fields</div>
+          <div class="modal-subtitle" id="modalSubtitle">Please enter valid values to calculate.</div>
+        </div>
+      </div>
+
+      <ul class="modal-list" id="modalList"></ul>
+
+      <div class="modal-actions">
+        <button class="modal-btn" id="modalOkBtn" type="button">OK</button>
       </div>
     </div>
-
-    <ul class="modal-list" id="modalList"></ul>
-
-    <div class="modal-actions">
-      <button class="modal-btn" id="modalOkBtn" type="button">OK</button>
-    </div>
   </div>
-</div>
 
   <script src="script.js"></script>
 </body>
-<footer class="footer">
-  <a href="about.html">About</a> |
-  <a href="contact.html">Contact</a> |
-  <a href="privacy.html">Privacy Policy</a> |
-  <a href="disclaimer.html">Disclaimer</a>
-</footer>
-
-
 </html>
