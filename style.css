@@ -505,12 +505,12 @@ label {
   margin-top: 48px;
 }
 
-/* optional: give page a little more breathing room like the screenshots */
+
 .wrap {
   max-width: 1220px;
 }
 
-/* responsive */
+
 @media (max-width: 980px) {
   .info-grid {
     grid-template-columns: repeat(2, 1fr);
